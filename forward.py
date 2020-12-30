@@ -28,7 +28,7 @@ del str1
 # Omega region configuration
 x = np.arange(94) * dx
 y = np.arange(94) * dy
-X,Y = np.meshgrid(x,y)
+X,Y = np.meshgrid(x,y, sparse=True)
 X = X.flatten()
 Y = Y.flatten()
 Xp = X.reshape(-1,1)
@@ -42,7 +42,7 @@ G = np.nan_to_num(G)
 
 x_gamma = np.arange(250) * dx
 y_gamma = np.arange(250) * dy
-X_g, Y_g = np.meshgrid(x_gamma, y_gamma)
+X_g, Y_g = np.meshgrid(x_gamma, y_gamma, sparse=True)
 X_g = X_g.flatten().reshape(-1,1)
 Y_g = Y_g.flatten().reshape(-1,1)
 r_g = np.sqrt((X_g-(X+78*dx))**2 +(Y_g-(Y+78*dx))**2)
